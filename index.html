@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071411">
+  <title>Chopka Client — Minecraft</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Chopka Client">
+      <span class="brand-mark">C<span>+</span></span>
+      <span class="brand-name">CHOPKA <b>CLIENT</b></span>
+    </a>
+    <nav><a href="#features">Возможности</a><a href="#download">Загрузка</a></nav>
+    <button class="btn btn-ghost" id="openLoginTop">Войти <span>↗</span></button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> MINECRAFT CLIENT <span class="eyebrow-line"></span> 1.21.4</div>
+      <h1>Играй по-своему.<br><span>На своей волне.</span></h1>
+      <p class="hero-copy">Chopka Client — собственный стиль, удобный интерфейс и всё нужное в одном месте.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#download">Скоро доступно <span>↗</span></a>
+        <button class="btn btn-ghost" id="openLoginHero">Войти в аккаунт</button>
+      </div>
+      <div class="hero-note"><span class="mini-check">✓</span> Тёмная тема · Бирюзово-зелёный неон · Minecraft Java</div>
+      <div class="preview-wrap">
+        <div class="preview-window">
+          <div class="window-head"><div class="window-dots"><i></i><i></i><i></i></div><span>CHOPKA CLIENT / DASHBOARD</span><span class="window-status">● ONLINE UI PREVIEW</span></div>
+          <div class="preview-content">
+            <aside class="preview-sidebar"><div class="side-logo">C<span>+</span></div><div class="side-item active">◈ <small>Главная</small></div><div class="side-item">▦ <small>Моды</small></div><div class="side-item">⚙ <small>Настройки</small></div><div class="side-bottom">●</div></aside>
+            <div class="preview-main">
+              <div class="preview-label">РАДЫ ВИДЕТЬ ТЕБЯ</div><h2>Готов к игре?</h2><p>Твоя следующая сессия начинается здесь.</p>
+              <div class="version-card"><div><small>ВЫБРАННАЯ ВЕРСИЯ</small><strong>Fabric 1.21.4</strong></div><span class="version-badge">STABLE</span></div>
+              <div class="play-row"><div><span class="status-dot"></span> Клиент готов к настройке</div><button class="play-button" type="button" id="previewPlay">▶ &nbsp; ИГРАТЬ</button></div>
+            </div>
+            <div class="preview-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="cube">C<span>+</span></div><div class="art-caption">FIND YOUR FLOW</div></div>
+          </div>
+        </div>
+        <div class="preview-glow"></div>
+      </div>
+    </section>
+
+    <section class="features section" id="features">
+      <div class="section-heading"><div class="eyebrow">СОЗДАН ДЛЯ ТЕБЯ</div><h2>Просто. Стильно. <span>Удобно.</span></h2></div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-icon">◈</div><div class="card-number">01 / UI</div><h3>Свой стиль</h3><p>Тёмный интерфейс с плавным переходом от зелёного к бирюзовому.</p></article>
+        <article class="feature-card"><div class="feature-icon">▤</div><div class="card-number">02 / HUB</div><h3>Всё под рукой</h3><p>Главная страница, настройки и информация о версии в одном окне.</p></article>
+        <article class="feature-card"><div class="feature-icon">⌁</div><div class="card-number">03 / UPDATES</div><h3>Обновления</h3><p>Новости проекта и информация о новых версиях на одной странице.</p></article>
+      </div>
+    </section>
+
+    <section class="download section" id="download">
+      <div><div class="eyebrow">ПЕРВЫЙ РЕЛИЗ</div><h2>Скоро на твоём <span>ПК.</span></h2><p>Сайт пока является демонстрационным макетом. Загрузка и аккаунты заработают после подключения сервера и публикации лаунчера.</p></div>
+      <div class="download-panel"><div class="download-icon">↓</div><div><strong>Chopka Client Launcher</strong><small>Windows · Minecraft Java 1.21.4 · скоро</small></div><span class="coming-soon">СКОРО</span></div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">C<span>+</span></span><span class="brand-name">CHOPKA <b>CLIENT</b></span></a><span>Сделано для своей волны <b>↗</b></span><span>© 2026 Chopka Client</span></footer>
+
+  <div class="modal-backdrop" id="loginModal" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+      <button class="modal-close" id="closeLogin" aria-label="Закрыть">×</button>
+      <div class="modal-logo">C<span>+</span></div>
+      <div class="eyebrow">АККАУНТ CHOPKA</div>
+      <h2 id="loginTitle">С возвращением.</h2>
+      <p class="modal-copy">Вход и регистрация подключатся после настройки защищённого сервера.</p>
+      <div class="form-tabs"><button class="tab active" data-mode="login">Войти</button><button class="tab" data-mode="register">Регистрация</button></div>
+      <form id="authForm">
+        <label>Электронная почта<input type="email" placeholder="you@example.com" required autocomplete="email"></label>
+        <label id="nicknameField" hidden>Никнейм<input type="text" placeholder="Твой ник" autocomplete="nickname"></label>
+        <label>Пароль<input type="password" placeholder="Не менее 8 символов" minlength="8" required autocomplete="current-password"></label>
+        <button class="btn btn-primary form-submit" type="submit" id="authSubmit">Войти <span>↗</span></button>
+        <div class="form-message" id="formMessage" role="status"></div>
+      </form>
+      <small class="security-note">Не вводи настоящий пароль здесь: это пока только макет.</small>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
